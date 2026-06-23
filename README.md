@@ -1,87 +1,163 @@
-# 📧 Email Spam Classification Project
+# 📧 Email Spam Detection using Machine Learning
 
-## Overview
-This project focuses on building a machine learning model to classify emails as spam or not spam using natural language processing (NLP) techniques. The dataset used is the [SMS Spam Collection Dataset](https://www.kaggle.com/uciml/sms-spam-collection-dataset) from Kaggle, which contains 5572 SMS messages labeled as spam or ham (not spam).
+## Project Overview
 
-![Problem Statement](images/front.png)
+This project is a Machine Learning and Natural Language Processing (NLP) application designed to classify text messages or emails as **Spam** or **Not Spam (Ham)**. The model analyzes textual content and predicts whether a message is legitimate or potentially unwanted.
 
+The project demonstrates the complete workflow of an NLP-based classification system, from data preprocessing and feature extraction to model training, evaluation, and deployment.
 
-## Motivation
-Spam emails are a significant issue, causing inconvenience and security risks. This project aims to develop an effective spam classification model to help filter out unwanted messages, enhancing email security and user experience.
+---
 
-## Problem Statement
-The goal is to classify emails as spam or ham using various NLP and machine learning techniques, focusing on achieving high precision to minimize false positives.
+## Objectives
 
-## Not Spam Email
-![Model](images/m.png)
+* Detect spam messages automatically
+* Apply Natural Language Processing techniques
+* Compare multiple classification algorithms
+* Achieve high precision and reliable predictions
+* Deploy the model through an interactive web application
 
-## Success Metrics
-The performance of the models is evaluated using the following metrics:
-- **Accuracy**
-- **Precision**
+---
 
-## Spam Email
-![Spam Email](images/spam.png)
+## Key Features
 
-Given the imbalanced nature of the dataset, precision is prioritized over accuracy.
+* Text Cleaning and Preprocessing
+* Exploratory Data Analysis (EDA)
+* Feature Extraction using TF-IDF
+* Machine Learning Model Training
+* Spam Prediction Interface
+* Streamlit Web Application
+* Model Evaluation and Optimization
 
-## Methodology
-1. **Data Cleaning** 🧹
-   - Removed duplicates, handled missing values, and transformed the text data.
+---
 
-2. **Exploratory Data Analysis (EDA)** 📊
-   - Analyzed the distribution of spam and ham emails.
+## Project Structure
 
-3. **Text Preprocessing** ✍️
-   - Converted text to lower case, removed stop words, and applied stemming.
+```text
+Email-Spam-Detection/
+│
+├── app.py
+├── model.pkl
+├── vectorizer.pkl
+├── spam.csv
+├── requirements.txt
+└── README.md
+```
 
-4. **Vectorization** 🧮
-   - Used Bag of Words (BoW) and Term Frequency-Inverse Document Frequency (TF-IDF) techniques for text vectorization.
+### File Description
 
-5. **Model Building** 🛠️
-   - Implemented various models including:
-     - **Multinomial Naive Bayes**
-     - **Bernoulli Naive Bayes**
-     - **Gaussian Naive Bayes**
+| File             | Description                    |
+| ---------------- | ------------------------------ |
+| app.py           | Main Streamlit application     |
+| model.pkl        | Trained machine learning model |
+| vectorizer.pkl   | Text vectorization model       |
+| spam.csv         | Dataset used for training      |
+| requirements.txt | Project dependencies           |
+| README.md        | Project documentation          |
 
-6. **Evaluation** 📈
-   - Evaluated models based on accuracy, precision, 
+---
 
-7. **Improvement** 🔧
-   - Tuned hyperparameters and tried different vectorization techniques to improve performance.
+## Technologies Used
 
-8. **Website** 🌐
-   - Built a user-friendly web interface using Streamlit.
+* Python
+* Streamlit
+* Pandas
+* NumPy
+* NLTK
+* Scikit-Learn
+* WordCloud
+* Matplotlib
 
-9. **Deployment** 🚀
-   - Deployed the application on Streamlit Cloud.
+---
 
-## Best Model
-The **Multinomial Naive Bayes** model performed best in terms of precision, making it the chosen model for this project. Despite BernoulliNB and GaussianNB showing better overall performance, the high precision of MultinomialNB makes it more suitable for our needs.
+## Data Preprocessing
 
-## Dataset
-The raw dataset contained 5572 rows and 5 columns. After data cleaning and EDA, the focus was on two columns:
-- **target**: The label indicating if the message is spam or ham.
-- **transformed_text**: The cleaned and preprocessed text of the message.
+The following preprocessing steps were applied:
 
-## Requirements
-The following libraries were used in this project:
-- Streamlit
-- NLTK
-- Pandas
-- Numpy
-- Scikit-learn
-- Wordcloud
+* Text normalization
+* Lowercase conversion
+* Removal of punctuation
+* Stop-word removal
+* Tokenization
+* Stemming
+* Duplicate removal
 
-## Steps Followed
-1. **Data Cleaning** 🧹
-2. **EDA** 📊
-3. **Text Preprocessing** ✍️
-4. **Model Building** 🛠️
-5. **Evaluation** 📈
-6. **Improvement** 🔧
-7. **Website** 🌐
-8. **Deployment** 🚀
+These steps help improve model accuracy and prediction quality.
+
+---
+
+## Feature Engineering
+
+Text data was converted into numerical format using:
+
+* Bag of Words (BoW)
+* TF-IDF Vectorization
+
+These techniques transform textual information into machine-readable features.
+
+---
+
+## Machine Learning Models Evaluated
+
+Several machine learning algorithms were tested and compared:
+
+* Multinomial Naive Bayes
+* Bernoulli Naive Bayes
+* Gaussian Naive Bayes
+
+Each model was evaluated using classification metrics to determine the most effective solution.
+
+---
+
+## Model Performance
+
+### Evaluation Metrics
+
+* Accuracy
+* Precision
+* Classification Performance
+
+### Selected Model
+
+**Multinomial Naive Bayes**
+
+The selected model achieved the highest precision and demonstrated reliable spam detection performance.
+
+---
+
+## Application Workflow
+
+1. User enters a message
+2. Text is preprocessed
+3. TF-IDF vectorization is applied
+4. Trained model analyzes the message
+5. Prediction is generated
+6. Result is displayed as Spam or Not Spam
+
+---
+
+## Deployment
+
+The project includes a web-based interface built using Streamlit, allowing users to test messages in real time.
+
+### Run Locally
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## Future Enhancements
+
+* Deep Learning Integration
+* Real-time Email Filtering
+* Multi-language Spam Detection
+* Cloud Deployment
+* Advanced NLP Models
+
+---
 
 ## Conclusion
-This project successfully built an email spam classifier with high precision using the Multinomial Naive Bayes model. The application is deployed and accessible through a user-friendly Streamlit interface.
+
+This project demonstrates the practical implementation of Machine Learning and Natural Language Processing for spam message detection. By combining effective preprocessing techniques with classification algorithms, the system provides accurate and reliable spam filtering capabilities through an easy-to-use web interface.
