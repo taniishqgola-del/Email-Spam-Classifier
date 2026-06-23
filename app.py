@@ -47,7 +47,7 @@ icon_model = "🤖"
 icon_contact = "📞"
 
 # Page configuration
-st.set_page_config(page_title=" 🚫 Email Spam Classifier-Sahil Tiwari", page_icon=":email:")
+st.set_page_config(page_title="📧 Email Spam Classifier", page_icon="📧")
 
 # Navigation
 pages = ["Problem Statement", "Model", "Contact Information"]
@@ -95,19 +95,20 @@ elif page_selection == "Model":
             st.success(f"{emoji_not_spam} Not Spam")
 
 # Page 3: Contact Information
+
 elif page_selection == "Contact Information":
-    st.title("Contact Information")
-    st.header("Get in Touch")
-    st.info(
-        """
-        If you have any questions or feedback, feel free to reach out:
-        
-        - **Email:** sahiltiwari1222@gmail.com
-        - **Phone:** 8670558757,8959688436
-        - **LinkedIn** https://www.linkedin.com/in/sahil-tiwari-b2269b27a/
-        - **Github** https://github.com/sahilTiwariiii
-        - **Twitter** https://x.com/sahil_tiwa96610
-        """
-    )
-    st.image("images/conn.jpg", caption="Example of Spam Detection", use_column_width=True)
+st.title("Contact Information")
+st.header("Get in Touch")
+st.info(
+"""
+If you have any questions or feedback, feel free to reach out:
+
+```
+    - **Name:** Tanishq Gola
+    - **Email:** taniishqgola@gmail.com
+    - **Phone:** 8053312187
+    """
+)
+st.image("images/conn.jpg", caption="Contact Information", use_column_width=True)
+```
 
